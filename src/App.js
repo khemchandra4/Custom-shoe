@@ -198,9 +198,6 @@ function Shoe() {
 function Picker() {
   const snap = useSnapshot(state);
 
-  // Your existing Picker component code
-
-  // Your existing Picker component code
   // Define a mapping of part names to their alternatives
   const partMap = {
     front_side: "Toe Cap",
@@ -226,7 +223,7 @@ function Picker() {
   const selectedPartName = snap.current && (partMap[snap.current] || snap.current);
 
   return (
-    <div style={{ display: snap.current ? "block" : "none", color: "white", position: "absolute", top: "50%", left: "10px", transform: "translate(-50%, -50%)" }}>
+    <div style={{ display: snap.current ? "block" : "none", color: "lightcyan", position: "absolute", top: "50%", left: "10px", transform: "translate(-50%, -50%),background-color: red" }}>
       {/* Display the selected part with its color */}
       {snap.current && (
         <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
@@ -272,10 +269,16 @@ export default function App() {
   };
 
   return (
-    <div className="container">
+    <div className="page">
+      <div className="header">
+      <div className="logo">
+        Customize Your Sneakers 
+      </div>
       <button className="download-btn" onClick={handleDownload}>
         Download
       </button>
+      </div>
+      <div className="container">
       <div className="canvas-container" ref={canvasContainerRef}>
         <Canvas shadows camera={{ position: [0, 0, 4], fov: 50 }}>
           {/* Your existing Canvas components */}
@@ -287,15 +290,9 @@ export default function App() {
           <OrbitControls minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 1} enableZoom={true} enablePan={false} />
         </Canvas>
       </div>
-      {downloadLink && (
-        <div className="download-link-container">
-          <a href={downloadLink} download="screenshot.png">
-            Download your screenshot
-          </a>
-        </div>
-      )}
       <div className="color-picker-container">
         <Picker />
+      </div>
       </div>
     </div>
   );

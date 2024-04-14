@@ -1,6 +1,3 @@
-/* styles.css */
-
-/* Your existing CSS styles */
 @import url("https://rsms.me/inter/inter.css");
 
 html,
@@ -16,10 +13,12 @@ body,
 }
 
 body {
-  background: black;
+  background-image: linear-gradient( 86.3deg,  rgba(0,0,0,1) 3.6%, rgba(51,51,51,1) 87.6% ); /* Dark Gray to Black */
   font-family: "Inter var", sans-serif;
   display: flex;
 }
+
+
 
 #root {
   flex: 1; /* Let the root fill the remaining space */
@@ -58,13 +57,21 @@ body {
   margin-right: 10px;
 }
 
-.container {
+.page {
   position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  flex: 1; /* Let the container fill the remaining space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .canvas-container {
@@ -75,14 +82,33 @@ body {
   height: 90vw;
 }
 
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  justify-content: space-between; /* Semi-transparent background */
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.logo {
+  font-family: "Inter var", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: cyan; /* Red (or any other color from your color scheme) */
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .download-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #af1a2b;
+  background-color: #FF0000; /* Red */
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -90,10 +116,10 @@ body {
 
 
 .color-picker-container {
-  /* Adjusted to display color picker to the right side of the canvas container */
   position: absolute;
   top: 50%;
-  right: calc(80vw + 30px); /* Adjust as needed to position the color picker */
+  right: calc(80vw + 30px);
   transform: translateY(-50%);
-  z-index: 999; /* Ensure color picker is above canvas */
+  z-index: 999;
 }
+
