@@ -1,3 +1,6 @@
+/* styles.css */
+
+/* Your existing CSS styles */
 @import url("https://rsms.me/inter/inter.css");
 
 html,
@@ -16,44 +19,81 @@ body {
   background: black;
   font-family: "Inter var", sans-serif;
   display: flex;
-  justify-content: center;
 }
 
 #root {
-  width: 76ch;
+  flex: 1; /* Let the root fill the remaining space */
+  display: flex;
+  flex-direction: column; /* Adjusted to column layout */
+  align-items: center; /* Adjusted to center items horizontally */
+  justify-content: center; /* Adjusted to center items vertically */
 }
 
 .picker {
-  position: absolute !important;
-  top: 74px;
-  left: 70px;
   width: 90px !important;
   height: 90px !important;
 }
-
-canvas {
-  touch-action: none;
+.picker-container {
+  position: relative;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.parent-element {
+.color-picker-wrapper {
+  margin-bottom: 10px;
+}
+
+.selected-part {
+  display: flex;
+  align-items: center;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.container {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  height: 90vw;
 }
 
 .download-btn {
   position: absolute;
-  z-index: 9999;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.5rem 1rem;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 1rem;
+  border-radius: 5px;
   background-color: #af1a2b;
   color: white;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
 }
 
-.download-btn:hover {
-  background-color: #7c1013;
+
+.color-picker-container {
+  /* Adjusted to display color picker to the right side of the canvas container */
+  position: absolute;
+  top: 50%;
+  right: calc(80vw + 30px); /* Adjust as needed to position the color picker */
+  transform: translateY(-50%);
+  z-index: 999; /* Ensure color picker is above canvas */
 }
