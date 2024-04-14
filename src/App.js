@@ -272,7 +272,7 @@ export default function App() {
     <div className="page">
       <div className="header">
       <div className="logo">
-        Customize Your Sneakers 
+      SneakerForge - Define Your style
       </div>
       </div>
       <div className="container">
