@@ -274,9 +274,6 @@ export default function App() {
       <div className="logo">
         Customize Your Sneakers 
       </div>
-      <button className="download-btn" onClick={handleDownload}>
-        Download
-      </button>
       </div>
       <div className="container">
       <div className="canvas-container" ref={canvasContainerRef}>
